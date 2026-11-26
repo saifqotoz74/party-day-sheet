@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Party Day Sheet</title><link rel="stylesheet" href="style.css">
+<style>.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.pill{padding:2px 9px;border-radius:99px;font-size:12px;font-weight:700}.ok{background:#d3f9d8;color:#2b8a3e}.no{background:#ffe3e3;color:#c92a2a}.part{background:#fff3bf;color:#a15c00}.pb{padding:10px 0;border-bottom:1px solid #edf0f7}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px}.row input{width:110px}.sum{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}.sum b{display:block;font-size:22px}@media print{header,form,.noprint,#add{display:none!important}body{background:#fff}.card{box-shadow:none}}</style></head>
+<body><header><h1>Party Day Sheet</h1><p>Deposit, headcount and waivers for each booking on one page. Print it for the day.</p></header>
+<main>
+<section class="card noprint" id="add"><h2>New booking</h2>
+<form id="f" class="two"><label>Host / child<input id="host" required></label><label>Date<input type="date" id="date" required></label><label>Time<input type="time" id="time" value="14:00"></label>
+<label>Package price<input type="number" id="price" min="0" value="300" required></label><label>Deposit due<input type="number" id="dep" min="0" value="100" required></label><label>Expected guests<input type="number" id="exp" min="1" value="15" required></label>
+<button class="primary">Add booking</button></form></section>
+<section class="card"><label>Show day<input type="date" id="day"></label> <button id="all" class="noprint">Show all upcoming</button> <button id="print" class="noprint">Print day sheet</button></section>
+<section class="card"><div class="sum" id="sum"></div></section>
+<section id="list"></section>
+</main><script src="app.js"></script></body></html>
